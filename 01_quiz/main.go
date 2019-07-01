@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -43,7 +44,7 @@ func parseLines(lines [][]string) []problem {
 	ret := make([]problem, len(lines))
 
 	for i, line := range lines {
-		ret[i] = problem{line[0], line[1]}
+		ret[i] = problem{line[0], strings.TrimSpace(line[1])}
 	}
 	return ret
 }
